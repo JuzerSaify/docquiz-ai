@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "src/app/api/generate-quiz/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/extract-text/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}
