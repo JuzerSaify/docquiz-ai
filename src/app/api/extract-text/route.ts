@@ -47,21 +47,19 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Failed to download file from storage" }, { status: 500 });
     }
 
-    // Convert Blob to ArrayBuffer for pdf-parse
+    // Convert Blob to ArrayBuffer
     const arrayBuffer = await fileData.arrayBuffer();
 
-    // Extract text using pdf-parse v2 API
-    const { PDFParse } = await import("pdf-parse");
-    const parser = new PDFParse({ data: new Uint8Array(arrayBuffer) });
-    const textResult = await parser.getText();
-    await parser.destroy();
+    // Extract text using unpdf (serverless-compatible)
+    const { extractText } = await import("unpdf");
+    const { text, totalPages } = await extractText(new Uint8Array(arrayBuffer));
 
     // Update document with extracted text
     const { error: updateError } = await serviceClient
       .from("documents")
       .update({
-        extracted_text: textResult.text,
-        page_count: textResult.total,
+        extracted_text: text,
+        page_count: totalPages,
         status: "ready",
       })
       .eq("id", document_id);
@@ -73,8 +71,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      page_count: textResult.total,
-      text_length: textResult.text.length,
+      page_count: totalPages,
+      text_length: text.length,
     });
   } catch (err) {
     console.error("Text extraction error:", err);
