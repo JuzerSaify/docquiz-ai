@@ -36,7 +36,8 @@ export default function UploadDocument({ userId, onUploadComplete }: UploadDocum
     setProgressLabel("Uploading to storage...");
 
     const timestamp = Date.now();
-    const filePath = `${userId}/${timestamp}-${file.name}`;
+    const sanitizedName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const filePath = `${userId}/${timestamp}-${sanitizedName}`;
 
     const { error: uploadError } = await supabase.storage
       .from("documents")

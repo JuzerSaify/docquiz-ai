@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function CheckEmailPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-[#F5F5F5]">
+      <div className="max-w-md w-full bg-white rounded-xl border border-[#E5E5E5] p-8 text-center">
         <div className="mb-4">
           <svg
-            className="mx-auto h-16 w-16 text-blue-600"
+            className="mx-auto h-16 w-16 text-[#0A0A0A]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -19,14 +19,14 @@ export default function CheckEmailPage() {
             />
           </svg>
         </div>
-        <h1 className="text-2xl font-bold mb-2">Check your email</h1>
-        <p className="text-gray-600 mb-6">
+        <h1 className="text-2xl font-semibold text-[#0A0A0A] mb-2">Check your email</h1>
+        <p className="text-[#737373] mb-6">
           We&apos;ve sent you a confirmation link. Please check your email and click the link to
           verify your account.
         </p>
         <Link
           href="/login"
-          className="text-blue-600 hover:underline text-sm"
+          className="text-[#0A0A0A] underline underline-offset-2 hover:text-[#737373] text-sm transition-colors"
         >
           Back to sign in
         </Link>

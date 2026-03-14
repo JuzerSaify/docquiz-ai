@@ -32,7 +32,7 @@ export default function SignupPage() {
     });
 
     if (error) {
-      setError(error.message);
+      setError("Unable to create account. Please check your details and try again.");
       setLoading(false);
       return;
     }
@@ -63,7 +63,7 @@ export default function SignupPage() {
     });
 
     if (error) {
-      setError(error.message);
+      setError("Unable to sign in with Google. Please try again.");
       setGoogleLoading(false);
     }
   }

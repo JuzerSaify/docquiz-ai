@@ -42,9 +42,9 @@ export async function POST(request: Request) {
       .download(doc.file_url);
 
     if (downloadError || !fileData) {
-      // Update document status to failed
       await serviceClient.from("documents").update({ status: "failed" }).eq("id", document_id);
-      return NextResponse.json({ error: `Failed to download file: ${downloadError?.message}` }, { status: 500 });
+      console.error("Failed to download file:", downloadError?.message);
+      return NextResponse.json({ error: "Failed to download file from storage" }, { status: 500 });
     }
 
     // Convert Blob to ArrayBuffer for pdf-parse
@@ -67,7 +67,8 @@ export async function POST(request: Request) {
       .eq("id", document_id);
 
     if (updateError) {
-      return NextResponse.json({ error: `Failed to update document: ${updateError.message}` }, { status: 500 });
+      console.error("Failed to update document:", updateError.message);
+      return NextResponse.json({ error: "Failed to update document record" }, { status: 500 });
     }
 
     return NextResponse.json({
@@ -78,7 +79,7 @@ export async function POST(request: Request) {
   } catch (err) {
     console.error("Text extraction error:", err);
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "Internal server error" },
+      { error: "An error occurred during text extraction" },
       { status: 500 }
     );
   }

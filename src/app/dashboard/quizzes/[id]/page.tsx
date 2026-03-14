@@ -40,17 +40,17 @@ export default async function QuizPage({ params }: PageProps) {
     .single();
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-5xl mx-auto px-6 py-8">
       <Link
         href={`/dashboard/documents/${quiz.document_id}`}
-        className="text-blue-600 hover:underline text-sm mb-4 inline-block"
+        className="text-[#737373] hover:text-[#0A0A0A] text-sm mb-4 inline-flex items-center gap-1 transition-colors"
       >
         ← Back to Document
       </Link>
 
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">{quiz.title}</h1>
-        <p className="text-gray-500 mt-1">
+        <h1 className="text-2xl font-semibold text-[#0A0A0A] tracking-tight">{quiz.title}</h1>
+        <p className="text-[#737373] mt-1 text-sm">
           From: {quiz.documents?.title || "Unknown document"} •{" "}
           {new Date(quiz.created_at).toLocaleDateString()}
         </p>

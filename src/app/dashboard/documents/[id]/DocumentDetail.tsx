@@ -89,7 +89,7 @@ export default function DocumentDetail({ document: doc, quizzes }: DocumentDetai
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-5xl mx-auto px-6 py-8">
       <Link
         href="/dashboard/documents"
         className="text-[#737373] hover:text-[#0A0A0A] text-sm mb-4 inline-flex items-center gap-1 transition-colors"
@@ -103,8 +103,8 @@ export default function DocumentDetail({ document: doc, quizzes }: DocumentDetai
       <div className="bg-white rounded-xl border border-[#E5E5E5] p-6 mb-6">
         <div className="flex justify-between items-start">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{doc.title}</h1>
-            <div className="flex items-center gap-3 mt-2 text-sm text-gray-500">
+            <h1 className="text-2xl font-semibold text-[#0A0A0A] tracking-tight">{doc.title}</h1>
+            <div className="flex items-center gap-3 mt-2 text-sm text-[#737373]">
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />

@@ -25,7 +25,7 @@ export default function Navbar({ email, subscriptionStatus }: NavbarProps) {
 
   return (
     <nav className="bg-white/80 backdrop-blur-sm border-b border-[#E5E5E5] sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-14">
           <div className="flex items-center gap-8">
             <Link href="/dashboard" className="text-base font-semibold tracking-tight text-[#0A0A0A]">

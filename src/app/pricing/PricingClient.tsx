@@ -68,7 +68,7 @@ export default function PricingClient({
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-5xl mx-auto px-6 py-20">
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-widest text-[#737373] mb-3">Pricing</p>
           <h1 className="text-3xl font-semibold text-[#0A0A0A]">Simple, transparent pricing</h1>

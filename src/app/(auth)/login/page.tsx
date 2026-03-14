@@ -25,7 +25,7 @@ export default function LoginPage() {
     });
 
     if (error) {
-      setError(error.message);
+      setError("Invalid email or password");
       setLoading(false);
       return;
     }
@@ -46,7 +46,7 @@ export default function LoginPage() {
     });
 
     if (error) {
-      setError(error.message);
+      setError("Unable to sign in with Google. Please try again.");
       setGoogleLoading(false);
     }
   }

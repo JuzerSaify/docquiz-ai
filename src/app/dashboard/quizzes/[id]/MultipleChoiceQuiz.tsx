@@ -154,8 +154,8 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
                   {submitted ? (isCorrect ? "✓" : isWrong ? "✗" : qIndex + 1) : qIndex + 1}
                 </span>
                 <div>
-                  <p className="font-medium text-gray-900 leading-relaxed">{q.question}</p>
-                  {q.topic && <span className="text-xs text-gray-400 mt-1 inline-block">{q.topic}</span>}
+                  <p className="font-medium text-[#0A0A0A] leading-relaxed">{q.question}</p>
+                  {q.topic && <span className="text-xs text-[#A3A3A3] mt-1 inline-block">{q.topic}</span>}
                 </div>
               </div>
 
@@ -196,7 +196,7 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
                       }`}>
                         {submitted && isCorrectOption ? "✓" : submitted && isSelected && !isCorrectOption ? "✗" : String.fromCharCode(65 + oIndex)}
                       </span>
-                      <span className={`text-sm ${submitted && !isCorrectOption && !isSelected ? "text-gray-400" : "text-gray-900"}`}>
+                      <span className={`text-sm ${submitted && !isCorrectOption && !isSelected ? "text-[#A3A3A3]" : "text-[#0A0A0A]"}`}>
                         {option}
                       </span>
                     </button>
@@ -235,7 +235,7 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
             )}
           </button>
           {answeredCount < questions.length && (
-            <p className="text-sm text-gray-400 mt-3">
+            <p className="text-sm text-[#A3A3A3] mt-3">
               {questions.length - answeredCount} question{questions.length - answeredCount !== 1 ? "s" : ""} remaining
             </p>
           )}

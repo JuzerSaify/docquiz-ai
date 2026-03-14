@@ -6,7 +6,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="border-b border-[#E5E5E5] bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <span className="text-lg font-semibold tracking-tight text-[#0A0A0A]">
             DocQuiz AI
           </span>
@@ -28,7 +28,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-3xl mx-auto px-6 pt-32 pb-24 text-center">
+      <section className="max-w-4xl mx-auto px-6 pt-32 pb-24 text-center">
         <div className="inline-flex items-center gap-2 border border-[#E5E5E5] text-[#737373] px-3 py-1 rounded-full text-xs tracking-wide mb-8">
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -82,7 +82,7 @@ export default function HomePage() {
 
       {/* Stats bar */}
       <section className="border-y border-[#E5E5E5] bg-[#FAFAFA]">
-        <div className="max-w-5xl mx-auto px-6 py-10 grid grid-cols-3 gap-8 text-center">
+        <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-3 gap-8 text-center">
           <div>
             <p className="text-3xl font-semibold text-[#0A0A0A] tracking-tight">10K+</p>
             <p className="text-sm text-[#737373] mt-1">Documents processed</p>
@@ -100,7 +100,7 @@ export default function HomePage() {
 
       {/* How it Works */}
       <section className="bg-white py-24">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-[#737373] text-center mb-3">How it works</p>
           <h2 className="text-3xl font-semibold text-[#0A0A0A] text-center mb-4">Three steps to better studying</h2>
           <p className="text-sm text-[#737373] text-center mb-16 max-w-lg mx-auto">Upload any document and let AI do the heavy lifting. Get study-ready materials in seconds.</p>
@@ -141,7 +141,7 @@ export default function HomePage() {
 
       {/* Features */}
       <section className="py-24 bg-[#F5F5F5] border-y border-[#E5E5E5]">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-[#737373] text-center mb-3">Features</p>
           <h2 className="text-3xl font-semibold text-[#0A0A0A] text-center mb-4">Everything you need to study</h2>
           <p className="text-sm text-[#737373] text-center mb-16 max-w-lg mx-auto">Powerful AI-driven tools designed to help you understand and retain information.</p>
@@ -188,7 +188,7 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-[#737373] text-center mb-3">Testimonials</p>
           <h2 className="text-3xl font-semibold text-[#0A0A0A] text-center mb-16">Loved by students everywhere</h2>
           <div className="grid md:grid-cols-3 gap-4">
@@ -240,7 +240,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="py-24 bg-[#0A0A0A]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-semibold text-white mb-4">Ready to study smarter?</h2>
           <p className="text-[#A3A3A3] mb-10 text-base">
             Start with 3 free quiz generations. Upgrade to Pro for $9/month.

@@ -13,16 +13,22 @@ export async function POST(request: Request) {
 
   let event: Stripe.Event;
 
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!webhookSecret) {
+    console.error("STRIPE_WEBHOOK_SECRET is not configured");
+    return NextResponse.json({ error: "Webhook configuration error" }, { status: 500 });
+  }
+
   try {
     event = stripe.webhooks.constructEvent(
       body,
       sig,
-      process.env.STRIPE_WEBHOOK_SECRET!
+      webhookSecret
     );
   } catch (err) {
     console.error("Webhook signature verification failed:", err);
     return NextResponse.json(
-      { error: `Webhook Error: ${err instanceof Error ? err.message : "Unknown"}` },
+      { error: "Webhook signature verification failed" },
       { status: 400 }
     );
   }

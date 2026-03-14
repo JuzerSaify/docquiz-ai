@@ -63,7 +63,7 @@ export async function POST() {
   } catch (err) {
     console.error("Stripe checkout error:", err);
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "Internal server error" },
+      { error: "An error occurred creating checkout session" },
       { status: 500 }
     );
   }
