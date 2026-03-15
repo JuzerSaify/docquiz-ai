@@ -14,7 +14,7 @@ const faqs = [
   { q: "How does the free plan work?", a: "You get 3 total quiz generations for free. Upload any PDF and generate quizzes, flashcards, or study guides — each generation counts as one use." },
   { q: "Can I cancel my Pro subscription?", a: "Yes, cancel anytime from your billing portal. You'll keep Pro access until the end of your billing period." },
   { q: "What file types are supported?", a: "Currently we support PDF files up to 10MB. We're working on adding support for more formats." },
-  { q: "How accurate is the AI generation?", a: "Powered by Gemini AI, our quiz generation produces high-quality questions with detailed explanations. Results improve with well-structured source documents." },
+  { q: "How accurate is the AI generation?", a: "Our AI-powered quiz generation produces high-quality questions with detailed explanations. Results improve with well-structured source documents." },
 ];
 
 export default function PricingClient({

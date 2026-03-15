@@ -33,7 +33,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/signup"
-              className="bg-[#0A0A0A] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#171717] transition-colors ml-2 flex items-center gap-1.5"
+              className="bg-[#0A0A0A] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#171717] transition-colors ml-2 flex items-center gap-1.5 btn-glow"
             >
               Get Started
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -94,13 +94,13 @@ export default function HomePage() {
             </span>, instantly
           </h1>
           <p className="mt-5 sm:mt-7 text-base sm:text-lg text-[#525252] max-w-2xl mx-auto leading-relaxed px-2 animate-slide-up delay-200">
-            Upload your PDFs and let Gemini AI generate quizzes, flashcards, and study guides.
+            Upload your PDFs and instantly generate quizzes, flashcards, and study guides.
             <span className="text-[#0A0A0A] font-medium"> Learn faster, retain more, ace your exams.</span>
           </p>
           <div className="mt-9 sm:mt-11 flex flex-col sm:flex-row justify-center gap-3 px-4 sm:px-0 animate-slide-up delay-300">
             <Link
               href="/signup"
-              className="bg-[#0A0A0A] text-white px-8 py-3.5 rounded-xl font-semibold text-sm hover:bg-[#171717] transition-all flex items-center justify-center gap-2"
+              className="bg-[#0A0A0A] text-white px-8 py-3.5 rounded-xl font-semibold text-sm hover:bg-[#171717] transition-all flex items-center justify-center gap-2 btn-glow"
             >
               Start for Free
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -181,7 +181,7 @@ export default function HomePage() {
 
             {[
               { step: "01", title: "Upload PDF", desc: "Drag and drop any document — textbooks, lecture notes, research papers, articles.", icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /> },
-              { step: "02", title: "AI Analyzes", desc: "Gemini AI reads your document, extracts key concepts, and creates study materials.", icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" /> },
+              { step: "02", title: "AI Analyzes", desc: "Our AI reads your document, extracts key concepts, and creates study materials.", icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" /> },
               { step: "03", title: "Study Smarter", desc: "Take quizzes, flip flashcards, and review study guides. Track your progress over time.", icon: <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" /> },
             ].map((item) => (
               <div key={item.step} className="text-center relative z-10">
@@ -234,7 +234,7 @@ export default function HomePage() {
               {
                 tag: "Speed",
                 title: "Instant Generation",
-                desc: "Powered by Gemini AI, generate high-quality study content in 5-15 seconds. No waiting, no manual work required.",
+                desc: "Generate high-quality study content in 5-15 seconds. No waiting, no manual work required.",
                 icon: <><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></>,
               },
             ].map((feature) => (
@@ -437,7 +437,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row justify-center gap-3 px-4 sm:px-0">
             <Link
               href="/signup"
-              className="bg-white text-[#0A0A0A] px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#F5F5F5] transition-all flex items-center justify-center gap-2"
+              className="bg-white text-[#0A0A0A] px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#F5F5F5] transition-all flex items-center justify-center gap-2 btn-glow"
             >
               Start for Free
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -466,7 +466,7 @@ export default function HomePage() {
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
               </svg>
-              Powered by Gemini AI
+              AI-powered generation
             </span>
             <span className="flex items-center gap-1.5">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>

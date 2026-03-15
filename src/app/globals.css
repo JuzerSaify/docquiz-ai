@@ -185,3 +185,38 @@ body {
     font-size: 16px;
   }
 }
+
+/* Smooth page transitions */
+.transition-page {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Subtle glow for primary buttons on hover */
+.btn-glow:hover {
+  box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.08);
+}
+
+/* Floating animation for hero elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Divider with dot */
+.divider-dot {
+  position: relative;
+}
+.divider-dot::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #0A0A0A;
+  transform: translateX(-50%);
+}
