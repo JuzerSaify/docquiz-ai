@@ -69,7 +69,7 @@ export default function QuizzesListClient({ quizzes, bestScores }: QuizzesListCl
   }, {});
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <h1 className="text-2xl font-semibold text-[#0A0A0A] tracking-tight">Quizzes</h1>
       </div>

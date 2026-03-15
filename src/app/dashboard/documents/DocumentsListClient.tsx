@@ -73,7 +73,7 @@ export default function DocumentsListClient({
     : documents;
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <div>
           <h1 className="text-2xl font-semibold text-[#0A0A0A] tracking-tight">Documents</h1>
@@ -126,7 +126,7 @@ export default function DocumentsListClient({
               <div key={doc.id} className="flex items-center justify-between p-4 hover:bg-[#FAFAFA] transition-colors">
                 <Link
                   href={`/dashboard/documents/${doc.id}`}
-                  className="flex items-center gap-3 flex-1 min-w-0"
+                  className="flex items-center gap-2.5 sm:gap-3 flex-1 min-w-0"
                 >
                   <div className="w-9 h-9 border border-[#E5E5E5] rounded-lg flex items-center justify-center bg-[#F5F5F5] shrink-0">
                     <svg className="w-4 h-4 text-[#737373]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>

@@ -106,3 +106,22 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #d4d4d4;
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Better touch targets on mobile */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 44px;
+  }
+  input, select, textarea {
+    font-size: 16px;
+  }
+}

@@ -25,9 +25,9 @@ export default function Navbar({ email, subscriptionStatus }: NavbarProps) {
 
   return (
     <nav className="bg-white/80 backdrop-blur-sm border-b border-[#E5E5E5] sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-14">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 sm:gap-8">
             <Link href="/dashboard" className="text-base font-semibold tracking-tight text-[#0A0A0A]">
               DocQuiz AI
             </Link>
@@ -101,28 +101,33 @@ export default function Navbar({ email, subscriptionStatus }: NavbarProps) {
         </div>
 
         {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="md:hidden border-t border-[#E5E5E5] py-3 space-y-1">
-            <Link href="/dashboard" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2 rounded-md hover:bg-[#F5F5F5]" onClick={() => setMobileOpen(false)}>
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"}`}>
+          <div className="border-t border-[#E5E5E5] py-3 space-y-1">
+            <Link href="/dashboard" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2.5 rounded-md hover:bg-[#F5F5F5] transition-colors" onClick={() => setMobileOpen(false)}>
               Dashboard
             </Link>
-            <Link href="/dashboard/documents" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2 rounded-md hover:bg-[#F5F5F5]" onClick={() => setMobileOpen(false)}>
+            <Link href="/dashboard/documents" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2.5 rounded-md hover:bg-[#F5F5F5] transition-colors" onClick={() => setMobileOpen(false)}>
               Documents
             </Link>
-            <Link href="/dashboard/quizzes" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2 rounded-md hover:bg-[#F5F5F5]" onClick={() => setMobileOpen(false)}>
+            <Link href="/dashboard/quizzes" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2.5 rounded-md hover:bg-[#F5F5F5] transition-colors" onClick={() => setMobileOpen(false)}>
               Quizzes
             </Link>
-            <Link href="/pricing" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2 rounded-md hover:bg-[#F5F5F5]" onClick={() => setMobileOpen(false)}>
+            <Link href="/pricing" className="block text-sm text-[#737373] hover:text-[#0A0A0A] px-3 py-2.5 rounded-md hover:bg-[#F5F5F5] transition-colors" onClick={() => setMobileOpen(false)}>
               Pricing
             </Link>
-            <div className="border-t border-[#E5E5E5] pt-2 mt-2 px-3">
-              <p className="text-xs text-[#A3A3A3] mb-2">{email}</p>
-              <button onClick={handleSignOut} className="text-sm text-[#737373] hover:text-[#0A0A0A]">
+            <div className="border-t border-[#E5E5E5] pt-3 mt-2 px-3 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] flex items-center justify-center">
+                  <span className="text-xs font-medium text-[#0A0A0A]">{initial}</span>
+                </div>
+                <span className="text-xs text-[#A3A3A3] truncate max-w-[180px]">{email}</span>
+              </div>
+              <button onClick={handleSignOut} className="text-sm text-[#737373] hover:text-[#0A0A0A] transition-colors">
                 Sign out
               </button>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

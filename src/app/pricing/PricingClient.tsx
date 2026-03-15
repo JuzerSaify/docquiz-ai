@@ -68,21 +68,21 @@ export default function PricingClient({
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        <div className="text-center mb-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+        <div className="text-center mb-12 sm:mb-16">
           <p className="text-xs uppercase tracking-widest text-[#737373] mb-3">Pricing</p>
-          <h1 className="text-3xl font-semibold text-[#0A0A0A]">Simple, transparent pricing</h1>
+          <h1 className="text-2xl sm:text-3xl font-semibold text-[#0A0A0A]">Simple, transparent pricing</h1>
           <p className="text-[#737373] mt-3 text-base">
             Start free, upgrade when you need more.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-[#E5E5E5] border border-[#E5E5E5] rounded-xl overflow-hidden max-w-2xl mx-auto mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#E5E5E5] border border-[#E5E5E5] rounded-xl overflow-hidden max-w-2xl mx-auto mb-16 sm:mb-24">
           {/* Free Tier */}
-          <div className="bg-white p-8">
+          <div className="bg-white p-6 sm:p-8">
             <h2 className="text-sm font-medium text-[#737373] uppercase tracking-wider">Free</h2>
             <div className="mt-4 mb-6">
-              <span className="text-4xl font-semibold text-[#0A0A0A]">$0</span>
+              <span className="text-3xl sm:text-4xl font-semibold text-[#0A0A0A]">$0</span>
               <span className="text-[#A3A3A3] text-sm ml-1">/month</span>
             </div>
             <ul className="space-y-3 mb-8">
@@ -113,7 +113,7 @@ export default function PricingClient({
           </div>
 
           {/* Pro Tier */}
-          <div className="bg-white p-8 relative">
+          <div className="bg-white p-6 sm:p-8 relative">
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#2563EB]" />
             <div className="flex items-center gap-2 mb-4">
               <h2 className="text-sm font-medium text-[#737373] uppercase tracking-wider">Pro</h2>
@@ -122,7 +122,7 @@ export default function PricingClient({
               </span>
             </div>
             <div className="mb-6">
-              <span className="text-4xl font-semibold text-[#0A0A0A]">$9</span>
+              <span className="text-3xl sm:text-4xl font-semibold text-[#0A0A0A]">$9</span>
               <span className="text-[#A3A3A3] text-sm ml-1">/month</span>
             </div>
             <ul className="space-y-3 mb-8">

@@ -54,7 +54,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left — Form */}
-      <div className="flex-1 flex items-center justify-center px-6">
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-0">
         <div className="w-full max-w-sm">
           <Link href="/" className="text-base font-semibold tracking-tight text-[#0A0A0A] inline-block mb-10">
             DocQuiz AI

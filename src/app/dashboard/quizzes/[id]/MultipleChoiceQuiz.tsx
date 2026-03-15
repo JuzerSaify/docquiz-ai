@@ -103,8 +103,8 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
 
       {/* Score result */}
       {submitted && (
-        <div className="rounded-xl p-8 mb-8 text-center bg-white border border-[#E5E5E5]">
-          <div className="text-6xl font-semibold text-[#0A0A0A] mb-2">
+        <div className="rounded-xl p-5 sm:p-8 mb-6 sm:mb-8 text-center bg-white border border-[#E5E5E5]">
+          <div className="text-4xl sm:text-6xl font-semibold text-[#0A0A0A] mb-2">
             {animatedScore}%
           </div>
           <p className="text-[#737373] text-lg">
@@ -145,7 +145,7 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
                   : "border-[#E5E5E5]"
               }`}
             >
-              <div className="flex items-start gap-3 mb-4">
+              <div className="flex items-start gap-2 sm:gap-3 mb-4">
                 <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium border ${
                   submitted
                     ? isCorrect ? "border-[#0A0A0A] bg-[#0A0A0A] text-white" : isWrong ? "border-red-400 text-red-600" : "border-[#E5E5E5] text-[#A3A3A3]"
@@ -159,7 +159,7 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
                 </div>
               </div>
 
-              <div className="space-y-2 ml-11">
+              <div className="space-y-2 ml-9 sm:ml-11">
                 {q.options.map((option, oIndex) => {
                   const isSelected = selectedAnswers[qIndex] === oIndex;
                   const isCorrectOption = q.correct_index === oIndex;
@@ -205,7 +205,7 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
               </div>
 
               {submitted && (
-                <div className={`mt-4 ml-11 p-4 rounded-lg text-sm leading-relaxed border border-[#E5E5E5] bg-[#F5F5F5] text-[#737373]`}>
+                <div className={`mt-4 ml-9 sm:ml-11 p-3 sm:p-4 rounded-lg text-sm leading-relaxed border border-[#E5E5E5] bg-[#F5F5F5] text-[#737373]`}>
                   <span className="font-semibold">Explanation:</span> {q.explanation}
                 </div>
               )}

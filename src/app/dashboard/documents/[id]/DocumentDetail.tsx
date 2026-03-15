@@ -89,7 +89,7 @@ export default function DocumentDetail({ document: doc, quizzes }: DocumentDetai
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-8">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <Link
         href="/dashboard/documents"
         className="text-[#737373] hover:text-[#0A0A0A] text-sm mb-4 inline-flex items-center gap-1 transition-colors"
@@ -100,11 +100,11 @@ export default function DocumentDetail({ document: doc, quizzes }: DocumentDetai
         Back to Documents
       </Link>
 
-      <div className="bg-white rounded-xl border border-[#E5E5E5] p-6 mb-6">
-        <div className="flex justify-between items-start">
+      <div className="bg-white rounded-xl border border-[#E5E5E5] p-4 sm:p-6 mb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start gap-3">
           <div>
-            <h1 className="text-2xl font-semibold text-[#0A0A0A] tracking-tight">{doc.title}</h1>
-            <div className="flex items-center gap-3 mt-2 text-sm text-[#737373]">
+            <h1 className="text-xl sm:text-2xl font-semibold text-[#0A0A0A] tracking-tight">{doc.title}</h1>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-2 text-xs sm:text-sm text-[#737373]">
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -132,9 +132,9 @@ export default function DocumentDetail({ document: doc, quizzes }: DocumentDetai
 
       {/* Generation buttons */}
       {doc.status === "ready" && (
-        <div className="bg-white rounded-xl border border-[#E5E5E5] p-6 mb-6">
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="text-lg font-semibold text-[#0A0A0A]">Generate Study Materials</h2>
+        <div className="bg-white rounded-xl border border-[#E5E5E5] p-4 sm:p-6 mb-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+            <h2 className="text-base sm:text-lg font-semibold text-[#0A0A0A]">Generate Study Materials</h2>
 
             {/* Difficulty selector */}
             <div className="flex items-center border border-[#E5E5E5] rounded-lg overflow-hidden">
@@ -221,8 +221,8 @@ export default function DocumentDetail({ document: doc, quizzes }: DocumentDetai
 
           {/* Generation progress */}
           {generating && (
-            <div className="mt-6 bg-[#F5F5F5] rounded-xl p-6 border border-[#E5E5E5]">
-              <div className="flex items-center gap-4">
+            <div className="mt-6 bg-[#F5F5F5] rounded-xl p-4 sm:p-6 border border-[#E5E5E5]">
+              <div className="flex items-center gap-2 sm:gap-4">
                 {generationSteps.map((step, i) => (
                   <div key={i} className="flex-1">
                     <div className={`flex flex-col items-center transition-all duration-500 ${

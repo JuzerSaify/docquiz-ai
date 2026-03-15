@@ -117,27 +117,27 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
       <div
         onClick={toggleFlip}
         className="perspective-1000 cursor-pointer select-none"
-        style={{ minHeight: 320 }}
+        style={{ minHeight: 260 }}
       >
         <div
           className={`relative w-full preserve-3d transition-transform duration-500 ease-in-out ${
             flipped ? "rotate-y-180" : ""
           } ${isAnimating ? "opacity-60 scale-95" : "opacity-100 scale-100"}`}
-          style={{ minHeight: 320, transition: "transform 0.5s ease, opacity 0.2s ease, scale 0.2s ease" }}
+          style={{ minHeight: 260, transition: "transform 0.5s ease, opacity 0.2s ease, scale 0.2s ease" }}
         >
           {/* Front */}
-          <div className="absolute inset-0 backface-hidden bg-white rounded-2xl border border-[#E5E5E5] p-8 flex flex-col items-center justify-center">
-            <p className="text-xs uppercase tracking-widest text-[#A3A3A3] mb-4 font-medium">Question</p>
-            <p className="text-xl text-center text-[#0A0A0A] font-medium leading-relaxed max-w-lg">
+          <div className="absolute inset-0 backface-hidden bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8 flex flex-col items-center justify-center">
+            <p className="text-xs uppercase tracking-widest text-[#A3A3A3] mb-3 sm:mb-4 font-medium">Question</p>
+            <p className="text-base sm:text-xl text-center text-[#0A0A0A] font-medium leading-relaxed max-w-lg">
               {card.front}
             </p>
-            <p className="text-xs text-[#A3A3A3] mt-6">Click or press Space to flip</p>
+            <p className="text-xs text-[#A3A3A3] mt-4 sm:mt-6">Tap to flip</p>
           </div>
 
           {/* Back */}
-          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#F5F5F5] rounded-2xl border border-[#E5E5E5] p-8 flex flex-col items-center justify-center">
+          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#F5F5F5] rounded-2xl border border-[#E5E5E5] p-5 sm:p-8 flex flex-col items-center justify-center">
             <p className="text-xs uppercase tracking-widest text-[#A3A3A3] mb-4 font-medium">Answer</p>
-            <p className="text-xl text-center text-[#0A0A0A] font-medium leading-relaxed max-w-lg">
+            <p className="text-base sm:text-xl text-center text-[#0A0A0A] font-medium leading-relaxed max-w-lg">
               {card.back}
             </p>
 
@@ -182,15 +182,15 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
         <button
           onClick={prevCard}
           disabled={currentIndex === 0}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 rounded-lg border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
           </svg>
-          Previous
+          <span className="hidden sm:inline">Previous</span>
         </button>
 
-        <div className="flex gap-1.5">
+        <div className="flex gap-1.5 overflow-x-auto max-w-[140px] sm:max-w-none px-1 scrollbar-hide">
           {cards.map((_, i) => (
             <button
               key={i}
@@ -202,7 +202,7 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
                   setTimeout(() => { setCurrentIndex(i); setIsAnimating(false); }, 150);
                 }
               }}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 shrink-0 ${
                 i === currentIndex
                   ? "bg-[#0A0A0A] scale-125"
                   : mastered.has(i)
@@ -216,17 +216,17 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
         <button
           onClick={nextCard}
           disabled={currentIndex === cards.length - 1}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 rounded-lg border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm"
         >
-          Next
+          <span className="hidden sm:inline">Next</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
 
-      {/* Keyboard shortcuts legend */}
-      <div className="mt-6 flex justify-center gap-4 text-xs text-[#A3A3A3]">
+      {/* Keyboard shortcuts legend — desktop only */}
+      <div className="mt-6 hidden sm:flex justify-center gap-4 text-xs text-[#A3A3A3]">
         <span>← → Navigate</span>
         <span>Space Flip</span>
         <span>H Hint</span>

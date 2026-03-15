@@ -120,7 +120,7 @@ export default function UploadDocument({ userId, onUploadComplete }: UploadDocum
       onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
       onDragLeave={() => setDragOver(false)}
       onDrop={handleDrop}
-      className={`relative rounded-xl border-2 border-dashed p-8 text-center transition-all duration-300 ${
+      className={`relative rounded-xl border-2 border-dashed p-5 sm:p-8 text-center transition-all duration-300 ${
         dragOver
           ? "border-[#0A0A0A] bg-[#F5F5F5] scale-[1.02]"
           : success
