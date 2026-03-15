@@ -89,11 +89,16 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
     <div>
       {/* Progress */}
       <div className="mb-6">
-        <div className="flex justify-between text-sm text-[#737373] mb-2">
-          <span>Card {currentIndex + 1} of {cards.length}</span>
+        <div className="flex justify-between text-sm mb-2">
+          <span className="text-[#737373] flex items-center gap-1.5">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            Card {currentIndex + 1} of {cards.length}
+          </span>
           <span className="flex items-center gap-3">
-            <span className="text-[#0A0A0A] font-medium">{mastered.size} mastered</span>
-            <span>{Math.round(((currentIndex + 1) / cards.length) * 100)}%</span>
+            <span className="text-[#0A0A0A] font-bold">{mastered.size} mastered</span>
+            <span className="text-[#737373]">{Math.round(((currentIndex + 1) / cards.length) * 100)}%</span>
           </span>
         </div>
         <div className="w-full bg-[#F5F5F5] rounded-full h-1.5 overflow-hidden">
@@ -126,8 +131,8 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
           style={{ minHeight: 260, transition: "transform 0.5s ease, opacity 0.2s ease, scale 0.2s ease" }}
         >
           {/* Front */}
-          <div className="absolute inset-0 backface-hidden bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8 flex flex-col items-center justify-center">
-            <p className="text-xs uppercase tracking-widest text-[#A3A3A3] mb-3 sm:mb-4 font-medium">Question</p>
+          <div className="absolute inset-0 backface-hidden bg-white rounded-2xl border-2 border-[#E5E5E5] p-5 sm:p-8 flex flex-col items-center justify-center">
+            <p className="text-xs uppercase tracking-widest text-[#A3A3A3] mb-3 sm:mb-4 font-bold">Question</p>
             <p className="text-base sm:text-xl text-center text-[#0A0A0A] font-medium leading-relaxed max-w-lg">
               {card.front}
             </p>
@@ -135,8 +140,8 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
           </div>
 
           {/* Back */}
-          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#F5F5F5] rounded-2xl border border-[#E5E5E5] p-5 sm:p-8 flex flex-col items-center justify-center">
-            <p className="text-xs uppercase tracking-widest text-[#A3A3A3] mb-4 font-medium">Answer</p>
+          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#FAFAFA] rounded-2xl border-2 border-[#E5E5E5] p-5 sm:p-8 flex flex-col items-center justify-center">
+            <p className="text-xs uppercase tracking-widest text-[#A3A3A3] mb-4 font-bold">Answer</p>
             <p className="text-base sm:text-xl text-center text-[#0A0A0A] font-medium leading-relaxed max-w-lg">
               {card.back}
             </p>
@@ -182,7 +187,7 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
         <button
           onClick={prevCard}
           disabled={currentIndex === 0}
-          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 rounded-lg border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 rounded-xl border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm font-medium"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
@@ -216,7 +221,7 @@ export default function FlashcardsView({ quiz }: FlashcardsViewProps) {
         <button
           onClick={nextCard}
           disabled={currentIndex === cards.length - 1}
-          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 rounded-lg border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 rounded-xl border border-[#E5E5E5] text-[#0A0A0A] hover:bg-[#F5F5F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm font-medium"
         >
           <span className="hidden sm:inline">Next</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

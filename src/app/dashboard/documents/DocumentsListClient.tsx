@@ -62,8 +62,8 @@ export default function DocumentsListClient({
       failed: "border-red-300 text-red-600",
     };
     return (
-      <span className={`px-2.5 py-0.5 rounded text-xs font-medium border ${styles[status] || "border-[#E5E5E5] text-[#737373]"}`}>
-        {status}
+      <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${styles[status] || "border-[#E5E5E5] text-[#737373]"}`}>
+        {status === "ready" ? "Ready" : status === "processing" ? "Processing" : status === "failed" ? "Failed" : status}
       </span>
     );
   }
@@ -75,9 +75,21 @@ export default function DocumentsListClient({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-        <div>
-          <h1 className="text-2xl font-semibold text-[#0A0A0A] tracking-tight">Documents</h1>
-          <p className="text-sm text-[#737373] mt-1">{totalCount} document{totalCount !== 1 ? "s" : ""} uploaded</p>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-[#0A0A0A] flex items-center justify-center">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-[#0A0A0A] tracking-tight">Documents</h1>
+            <p className="text-sm text-[#737373] mt-0.5">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0A0A0A]"></span>
+                {totalCount} document{totalCount !== 1 ? "s" : ""} uploaded
+              </span>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -107,28 +119,31 @@ export default function DocumentsListClient({
       {/* Documents list */}
       <div className="border border-[#E5E5E5] rounded-xl overflow-hidden">
         {filtered.length === 0 ? (
-          <div className="p-12 text-center">
-            <div className="w-12 h-12 border border-[#E5E5E5] rounded-lg flex items-center justify-center mx-auto mb-3 bg-[#F5F5F5]">
+          <div className="p-12 text-center relative">
+            <div className="absolute inset-0 dot-grid opacity-20"></div>
+            <div className="relative">
+            <div className="w-12 h-12 border-2 border-[#E5E5E5] rounded-xl flex items-center justify-center mx-auto mb-3 bg-white">
               <svg className="w-5 h-5 text-[#737373]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
             </div>
-            <p className="text-sm font-medium text-[#0A0A0A]">
+            <p className="text-sm font-bold text-[#0A0A0A]">
               {search ? "No matching documents" : "No documents yet"}
             </p>
             <p className="text-xs text-[#A3A3A3] mt-1">
               {search ? "Try a different search term" : "Upload your first PDF above to get started"}
             </p>
+            </div>
           </div>
         ) : (
           <div className="divide-y divide-[#F5F5F5]">
             {filtered.map((doc) => (
-              <div key={doc.id} className="flex items-center justify-between p-4 hover:bg-[#FAFAFA] transition-colors">
+              <div key={doc.id} className="flex items-center justify-between p-4 hover:bg-[#FAFAFA] transition-all border-l-3 border-l-transparent hover:border-l-[#0A0A0A]">
                 <Link
                   href={`/dashboard/documents/${doc.id}`}
                   className="flex items-center gap-2.5 sm:gap-3 flex-1 min-w-0"
                 >
-                  <div className="w-9 h-9 border border-[#E5E5E5] rounded-lg flex items-center justify-center bg-[#F5F5F5] shrink-0">
+                  <div className="w-10 h-10 border border-[#E5E5E5] rounded-xl flex items-center justify-center bg-[#FAFAFA] shrink-0">
                     <svg className="w-4 h-4 text-[#737373]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>

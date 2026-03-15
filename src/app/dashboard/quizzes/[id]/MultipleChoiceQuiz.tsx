@@ -90,10 +90,15 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
     <div>
       {/* Progress bar (before submit) */}
       {!submitted && (
-        <div className="mb-6 bg-white rounded-lg border border-[#E5E5E5] p-4">
-          <div className="flex justify-between text-sm text-[#737373] mb-2">
-            <span>{answeredCount} of {questions.length} answered</span>
-            <span>{progressPercent}%</span>
+        <div className="mb-6 bg-white rounded-xl border border-[#E5E5E5] p-4">
+          <div className="flex justify-between text-sm mb-2">
+            <span className="text-[#737373] flex items-center gap-1.5">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+              </svg>
+              {answeredCount} of {questions.length} answered
+            </span>
+            <span className="font-bold text-[#0A0A0A]">{progressPercent}%</span>
           </div>
           <div className="w-full bg-[#F5F5F5] rounded-full h-1.5 overflow-hidden">
             <div className="bg-[#0A0A0A] h-1.5 rounded-full progress-bar" style={{ width: `${progressPercent}%` }} />
@@ -103,11 +108,13 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
 
       {/* Score result */}
       {submitted && (
-        <div className="rounded-xl p-5 sm:p-8 mb-6 sm:mb-8 text-center bg-white border border-[#E5E5E5]">
-          <div className="text-4xl sm:text-6xl font-semibold text-[#0A0A0A] mb-2">
+        <div className="rounded-2xl p-5 sm:p-8 mb-6 sm:mb-8 text-center bg-white border-2 border-[#E5E5E5] relative">
+          <div className="absolute inset-0 dot-grid opacity-10 rounded-2xl"></div>
+          <div className="relative">
+          <div className="text-5xl sm:text-7xl font-bold text-[#0A0A0A] mb-2 tracking-tight">
             {animatedScore}%
           </div>
-          <p className="text-[#737373] text-lg">
+          <p className="text-[#737373] text-lg font-medium">
             {correctCount} of {questions.length} correct
           </p>
           <p className="text-[#A3A3A3] text-sm mt-1">
@@ -119,10 +126,14 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
           </p>
           <button
             onClick={resetQuiz}
-            className="mt-4 bg-[#0A0A0A] text-white px-6 py-2.5 rounded-lg hover:bg-[#171717] transition-colors text-sm font-medium"
+            className="mt-4 bg-[#0A0A0A] text-white px-6 py-2.5 rounded-xl hover:bg-[#171717] transition-colors text-sm font-medium inline-flex items-center gap-2"
           >
             Try Again
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
+            </svg>
           </button>
+          </div>
         </div>
       )}
 
@@ -220,7 +231,7 @@ export default function MultipleChoiceQuiz({ quiz, userId }: MultipleChoiceQuizP
           <button
             onClick={handleSubmit}
             disabled={answeredCount < questions.length || saving}
-            className="bg-[#0A0A0A] text-white px-10 py-3 rounded-lg hover:bg-[#171717] disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-medium text-sm"
+            className="bg-[#0A0A0A] text-white px-10 py-3 rounded-xl hover:bg-[#171717] disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-medium text-sm inline-flex items-center gap-2"
           >
             {saving ? (
               <span className="flex items-center gap-2">

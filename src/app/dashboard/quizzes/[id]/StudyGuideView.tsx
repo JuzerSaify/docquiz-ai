@@ -49,30 +49,30 @@ export default function StudyGuideView({ quiz }: StudyGuideViewProps) {
     <div className="space-y-6">
       {/* Summary */}
       <div
-        className="bg-white rounded-xl border border-[#E5E5E5] p-5 sm:p-8"
+        className="bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8"
       >
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-9 h-9 rounded-lg border border-[#E5E5E5] flex items-center justify-center">
+          <div className="w-9 h-9 rounded-lg border-2 border-[#E5E5E5] flex items-center justify-center bg-[#FAFAFA]">
             <svg className="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
-          <h2 className="text-base sm:text-lg font-semibold text-[#0A0A0A]">Summary</h2>
+          <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A]">Summary</h2>
         </div>
         <p className="text-[#737373] leading-relaxed whitespace-pre-line text-sm">{summary}</p>
       </div>
 
       {/* Key Concepts */}
       <div
-        className="bg-white rounded-xl border border-[#E5E5E5] p-5 sm:p-8"
+        className="bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8"
       >
         <div className="flex items-center gap-3 mb-5">
-          <div className="w-9 h-9 rounded-lg border border-[#E5E5E5] flex items-center justify-center">
+          <div className="w-9 h-9 rounded-lg border-2 border-[#E5E5E5] flex items-center justify-center bg-[#FAFAFA]">
             <svg className="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
           </div>
-          <h2 className="text-base sm:text-lg font-semibold text-[#0A0A0A]">Key Concepts</h2>
+          <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A]">Key Concepts</h2>
           <span className="text-xs text-[#A3A3A3] ml-auto">{key_concepts.length} concepts</span>
         </div>
         <div className="space-y-3">
@@ -122,15 +122,15 @@ export default function StudyGuideView({ quiz }: StudyGuideViewProps) {
       {/* Important Points */}
       {important_points && important_points.length > 0 && (
         <div
-          className="bg-[#F5F5F5] rounded-xl border border-[#E5E5E5] p-5 sm:p-8"
+          className="bg-[#FAFAFA] rounded-2xl border border-[#E5E5E5] p-5 sm:p-8"
         >
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-9 h-9 rounded-lg border border-[#E5E5E5] bg-white flex items-center justify-center">
+            <div className="w-9 h-9 rounded-lg border-2 border-[#E5E5E5] bg-white flex items-center justify-center">
               <svg className="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
               </svg>
             </div>
-            <h2 className="text-base sm:text-lg font-semibold text-[#0A0A0A]">Must Remember</h2>
+            <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A]">Must Remember</h2>
           </div>
           <ul className="space-y-3">
             {important_points.map((point, index) => (
@@ -148,15 +148,15 @@ export default function StudyGuideView({ quiz }: StudyGuideViewProps) {
       {/* Connections */}
       {connections && connections.length > 0 && (
         <div
-          className="bg-white rounded-xl border border-[#E5E5E5] p-5 sm:p-8"
+          className="bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8"
         >
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-9 h-9 rounded-lg border border-[#E5E5E5] flex items-center justify-center">
+            <div className="w-9 h-9 rounded-lg border-2 border-[#E5E5E5] flex items-center justify-center bg-[#FAFAFA]">
               <svg className="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
               </svg>
             </div>
-            <h2 className="text-base sm:text-lg font-semibold text-[#0A0A0A]">Concept Connections</h2>
+            <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A]">Concept Connections</h2>
           </div>
           <div className="space-y-4">
             {connections.map((conn, index) => (
@@ -181,15 +181,15 @@ export default function StudyGuideView({ quiz }: StudyGuideViewProps) {
 
       {/* Review Questions */}
       <div
-        className="bg-white rounded-xl border border-[#E5E5E5] p-5 sm:p-8"
+        className="bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8"
       >
         <div className="flex items-center gap-3 mb-5">
-          <div className="w-9 h-9 rounded-lg border border-[#E5E5E5] flex items-center justify-center">
+          <div className="w-9 h-9 rounded-lg border-2 border-[#E5E5E5] flex items-center justify-center bg-[#FAFAFA]">
             <svg className="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h2 className="text-base sm:text-lg font-semibold text-[#0A0A0A]">Review Questions</h2>
+          <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A]">Review Questions</h2>
           <span className="text-xs text-[#A3A3A3] ml-auto">Click to mark reviewed</span>
         </div>
         <div className="space-y-3">
@@ -225,7 +225,7 @@ export default function StudyGuideView({ quiz }: StudyGuideViewProps) {
         </div>
         {revealedQuestions.size === review_questions.length && review_questions.length > 0 && (
           <div className="mt-4 text-center">
-            <p className="text-[#0A0A0A] text-sm font-medium">
+            <p className="text-[#0A0A0A] text-sm font-bold">
               All questions reviewed! Consider writing out your answers for deeper retention.
             </p>
           </div>

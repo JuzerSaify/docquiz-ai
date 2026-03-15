@@ -73,11 +73,16 @@ export default function SignupPage() {
       {/* Left — Form */}
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-0">
         <div className="w-full max-w-sm">
-          <Link href="/" className="text-base font-semibold tracking-tight text-[#0A0A0A] inline-block mb-10">
-            DocQuiz AI
+          <Link href="/" className="inline-flex items-center gap-2 mb-10">
+            <div className="w-7 h-7 rounded-lg border border-[#0A0A0A] bg-[#0A0A0A] flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+              </svg>
+            </div>
+            <span className="text-base font-bold tracking-tight text-[#0A0A0A]">DocQuiz AI</span>
           </Link>
-          <h1 className="text-2xl font-semibold text-[#0A0A0A] mb-1">Create your account</h1>
-          <p className="text-sm text-[#737373] mb-8">Get started with 3 free quiz generations</p>
+          <h1 className="text-2xl font-bold text-[#0A0A0A] mb-1 tracking-tight">Create your account</h1>
+          <p className="text-sm text-[#525252] mb-8">Get started with 3 free quiz generations</p>
 
           {error && (
             <div className="border border-red-200 text-red-600 px-4 py-2.5 rounded-lg mb-4 text-sm">
@@ -176,19 +181,36 @@ export default function SignupPage() {
       </div>
 
       {/* Right — Brand panel */}
-      <div className="hidden lg:flex flex-1 bg-[#F5F5F5] border-l border-[#E5E5E5] items-center justify-center p-12">
-        <div className="max-w-md text-center">
-          <div className="w-12 h-12 border border-[#E5E5E5] rounded-lg flex items-center justify-center mx-auto mb-8 bg-white">
-            <svg className="w-5 h-5 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+      <div className="hidden lg:flex flex-1 bg-[#FAFAFA] border-l border-[#E5E5E5] items-center justify-center p-12 relative overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-30" />
+        <div className="relative max-w-md">
+          <div className="w-12 h-12 border-2 border-[#0A0A0A] rounded-xl bg-[#0A0A0A] flex items-center justify-center mb-8">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
             </svg>
           </div>
-          <blockquote className="text-lg text-[#0A0A0A] leading-relaxed mb-6">
-            &ldquo;I uploaded my entire semester&apos;s worth of notes and had study materials ready in minutes. This is a game changer.&rdquo;
-          </blockquote>
-          <div>
-            <p className="text-sm font-medium text-[#0A0A0A]">James Rodriguez</p>
-            <p className="text-xs text-[#737373]">Computer Science Major</p>
+          <h3 className="text-xl font-bold text-[#0A0A0A] mb-3 tracking-tight">Everything you need to ace your exams</h3>
+          <p className="text-sm text-[#525252] leading-relaxed mb-8">Upload any document and get AI-generated study materials in seconds.</p>
+          <div className="grid grid-cols-2 gap-3 mb-10">
+            {[{num: "10K+", label: "Documents processed"}, {num: "50K+", label: "Quizzes created"}, {num: "98%", label: "Satisfaction rate"}, {num: "<15s", label: "Generation time"}].map((s, i) => (
+              <div key={i} className="border border-[#E5E5E5] rounded-lg p-3 bg-white">
+                <p className="text-lg font-bold text-[#0A0A0A] tracking-tight">{s.num}</p>
+                <p className="text-[11px] text-[#737373]">{s.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="border border-[#E5E5E5] rounded-xl p-5 bg-white">
+            <div className="text-2xl text-[#E5E5E5] font-serif leading-none mb-2">&ldquo;</div>
+            <p className="text-sm text-[#0A0A0A] leading-relaxed mb-4">I uploaded my entire semester&apos;s worth of notes and had study materials ready in minutes. This is a game changer.</p>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-[#0A0A0A] flex items-center justify-center">
+                <span className="text-[10px] font-bold text-white">JR</span>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-[#0A0A0A]">James Rodriguez</p>
+                <p className="text-[11px] text-[#737373]">Computer Science Major</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

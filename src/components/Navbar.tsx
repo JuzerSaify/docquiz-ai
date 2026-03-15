@@ -28,8 +28,13 @@ export default function Navbar({ email, subscriptionStatus }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-14">
           <div className="flex items-center gap-4 sm:gap-8">
-            <Link href="/dashboard" className="text-base font-semibold tracking-tight text-[#0A0A0A]">
-              DocQuiz AI
+            <Link href="/dashboard" className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-lg border border-[#0A0A0A] bg-[#0A0A0A] flex items-center justify-center">
+                <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                </svg>
+              </div>
+              <span className="text-base font-bold tracking-tight text-[#0A0A0A]">DocQuiz AI</span>
             </Link>
             <div className="hidden md:flex items-center gap-1">
               <Link

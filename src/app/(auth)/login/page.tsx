@@ -56,11 +56,16 @@ export default function LoginPage() {
       {/* Left — Form */}
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-0">
         <div className="w-full max-w-sm">
-          <Link href="/" className="text-base font-semibold tracking-tight text-[#0A0A0A] inline-block mb-10">
-            DocQuiz AI
+          <Link href="/" className="inline-flex items-center gap-2 mb-10">
+            <div className="w-7 h-7 rounded-lg border border-[#0A0A0A] bg-[#0A0A0A] flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+              </svg>
+            </div>
+            <span className="text-base font-bold tracking-tight text-[#0A0A0A]">DocQuiz AI</span>
           </Link>
-          <h1 className="text-2xl font-semibold text-[#0A0A0A] mb-1">Welcome back</h1>
-          <p className="text-sm text-[#737373] mb-8">Sign in to your account to continue</p>
+          <h1 className="text-2xl font-bold text-[#0A0A0A] mb-1 tracking-tight">Welcome back</h1>
+          <p className="text-sm text-[#525252] mb-8">Sign in to your account to continue</p>
 
           {error && (
             <div className="border border-red-200 text-red-600 px-4 py-2.5 rounded-lg mb-4 text-sm">
@@ -144,19 +149,38 @@ export default function LoginPage() {
       </div>
 
       {/* Right — Brand panel */}
-      <div className="hidden lg:flex flex-1 bg-[#F5F5F5] border-l border-[#E5E5E5] items-center justify-center p-12">
-        <div className="max-w-md text-center">
-          <div className="w-12 h-12 border border-[#E5E5E5] rounded-lg flex items-center justify-center mx-auto mb-8 bg-white">
-            <svg className="w-5 h-5 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      <div className="hidden lg:flex flex-1 bg-[#FAFAFA] border-l border-[#E5E5E5] items-center justify-center p-12 relative overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-30" />
+        <div className="relative max-w-md">
+          <div className="w-12 h-12 border-2 border-[#0A0A0A] rounded-xl bg-[#0A0A0A] flex items-center justify-center mb-8">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
             </svg>
           </div>
-          <blockquote className="text-lg text-[#0A0A0A] leading-relaxed mb-6">
-            &ldquo;DocQuiz AI turned my 200-page textbook into a study guide I actually want to use. Passed my exam on the first try.&rdquo;
-          </blockquote>
-          <div>
-            <p className="text-sm font-medium text-[#0A0A0A]">Sarah Chen</p>
-            <p className="text-xs text-[#737373]">Medical Student</p>
+          <h3 className="text-xl font-bold text-[#0A0A0A] mb-3 tracking-tight">Study smarter, not harder</h3>
+          <p className="text-sm text-[#525252] leading-relaxed mb-8">Join thousands of students who use AI to transform their documents into interactive study materials.</p>
+          <ul className="space-y-4 mb-10">
+            {[{icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />, text: "AI-powered quiz generation"}, {icon: <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />, text: "Interactive flashcards"}, {icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />, text: "Structured study guides"}].map((f, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <div className="w-8 h-8 border border-[#E5E5E5] rounded-lg flex items-center justify-center bg-white shrink-0">
+                  <svg className="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>{f.icon}</svg>
+                </div>
+                <span className="text-sm text-[#0A0A0A] font-medium">{f.text}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="border border-[#E5E5E5] rounded-xl p-5 bg-white">
+            <div className="text-2xl text-[#E5E5E5] font-serif leading-none mb-2">&ldquo;</div>
+            <p className="text-sm text-[#0A0A0A] leading-relaxed mb-4">Turned my 200-page textbook into a study guide I actually want to use. Passed my exam on the first try.</p>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-[#0A0A0A] flex items-center justify-center">
+                <span className="text-[10px] font-bold text-white">SC</span>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-[#0A0A0A]">Sarah Chen</p>
+                <p className="text-[11px] text-[#737373]">Medical Student</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
